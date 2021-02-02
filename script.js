@@ -183,15 +183,18 @@ function SizeCost(size) {
 }
 
 function CostCalc() {
-    var sizeCost = SizeCost(sizeNum);
+    var sizeCost = (sizeNum * (sizeNum + 1)) / 2;
+    var sizeCostExtra = parseInt(SizeCost(sizeNum));
+    var speedCost = SpeedPointCalc();
+    var systemCost = SystemPointCalc();
     var costCost = costCostSub;
     var durCost = durCostAdd;
     var envCost = environmentsList.length - 1;
     var custCost = costlyCustomNum;
     var shuttleCost = shuttleNum;
 
-    costNum = originalCost + sizeCost + costCost + durCost + envCost
-        + custCost + shuttleCost;
+    costNum = originalCost + sizeCost + sizeCostExtra + costCost + durCost + envCost
+        + custCost + shuttleCost + speedCost + systemCost;
     cost.textContent = costNum;
 }
 
