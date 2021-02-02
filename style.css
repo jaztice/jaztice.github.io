@@ -1,0 +1,33 @@
+body {
+    font-family: Courier New, Courier, monospace;
+    background-color: #f4f4f4;
+}
+
+header {
+    text-align: center;
+    text-decoration: underline;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+h1, h2, h3 {
+    font-family: fantasy;
+}
+
+table, th, td {
+    width: 500px;
+    margin: auto;
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    background-color: white;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.customlist label {
+    font-weight: bold; 
+}
