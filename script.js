@@ -351,7 +351,7 @@ function Garage() {
         checkBox.checked = false;
     }
     else {
-        Handlecustoms(checkBox.checked, false);
+        HandleCustoms(checkBox.checked, false);
         AddToCustomsList(checkBox, ' Garage');
     }
 }
