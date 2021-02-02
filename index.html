@@ -2,19 +2,21 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="StardustBluesShip.css">
     <title>Stardust Blues Ship Builder</title>
 </head>
 <body>
-    <header align="center">
-        <h1>Stardust Blues Ship Builder</h1><br/><br/>
+    <header>
+        <h1>Stardust Blues Ship Builder</h1><br />
     </header>
     <main>
+        <br />
         <div align="center">
-            <label for="crewNum"><b>Number of Crewmembers</b></label>
+            <label for="crewNum"><b>Number of Crewmembers:</b></label>
             <input type="number" id="crewNum" value="0" min="0" max="100" onclick="Crewmembers()" />
         </div>
-        <table style="width:500px" align="center">
-            <caption><h3>Stats and Attributes</h3></caption>
+        <table>
+            <caption><h2>Stats and Attributes</h2></caption>
             <thead>
                 <tr>
                     <th>Size</th>
@@ -88,136 +90,301 @@
 
         <br /><br />
     -->
-        <h3><u>Customizations</u></h3>
+        <div class="container">
+            <h2><u>Customizations</u></h2>
+            <div class="customlist">
+                <input type="checkbox" id="automatedControls" onclick="AutomatedControls()" />
+                <label for="automatedControls">Automated Controls</label>
+                <ul>
+                    <li>
+                        Your ship flies itself – literally. No need for a pilot on this one.
+                        Problem is, that might get you into trouble more often than it gets
+                        you out of it.
+                    </li>
+                    <li>
+                        Gives +1 cost to the ship. Captain rolls when making pilot moves.
+                    </li>
+                </ul>
 
-        <input type="checkbox" id="automatedControls" onclick="AutomatedControls()" />
-        <label for="automatedControls"><b>Automated Controls</b></label>
-        <ul>
-            <li>
-                Your ship flies itself – literally. No need for a pilot on this one.
-                Problem is, that might get you into trouble more often than it gets
-                you out of it.
-            </li>
-            <li>
-                Gives +1 cost to the ship. Captain rolls when making pilot moves.
-            </li>
-        </ul>
+                <input type="checkbox" id="battleScarred" onclick="BattleScarred()" />
+                <label for="battleScarred"><b>Battle-Scarred</b></label>
+                <ul>
+                    <li>
+                        The ship gains +1 durability.
+                    </li>
+                </ul>
 
-        <input type="checkbox" id="battleScarred" onclick="BattleScarred()" />
-        <label for="battleScarred"><b>Battle-Scarred</b></label>
-        <ul>
-            <li>
-                The ship gains +1 durability.
-            </li>
-        </ul>
+                <input type="checkbox" id="brig" onclick="Brig()" />
+                <label for="brig"><b>Brig</b></label>
+                <ul>
+                    <li>
+                        You’ve got yourself a nice little jail set up somewhere on your ship.
+                        It isn’t all that big, but it can fit a few troublemakers inside.
+                    </li>
+                    <li>
+                        The Veteran gets +1 ongoing to any rolls made while in the brig.
+                        <i>Only allowed on Size 1 ships and above.</i>
+                    </li>
+                </ul>
 
-        <input type="checkbox" id="brig" onclick="Brig()" />
-        <label for="brig"><b>Brig</b></label>
-        <ul>
-            <li>
-                You’ve got yourself a nice little jail set up somewhere on your ship.
-                It isn’t all that big, but it can fit a few troublemakers inside.
-            </li>
-            <li>
-                The Veteran gets +1 ongoing to any rolls made while in the brig.
-                <i>Only allowed on Size 1 ships and above.</i>
-            </li>
-        </ul>
+                <input type="checkbox" id="broadcastingEquipment" onclick="BroadcastingEquipment()" />
+                <label for="broadcastingEquipment"><b>Broadcasting Equipment</b></label>
+                <ul>
+                    <li>
+                        You have everything you need on this ship to broadcast whatever
+                        you want across the universe. What are you using it for?
+                    </li>
+                </ul>
 
-        <input type="checkbox" id="broadcastingEquipment" onclick="BroadcastingEquipment()" />
-        <label for="broadcastingEquipment"><b>Broadcasting Equipment</b></label>
-        <ul>
-            <li>
-                You have everything you need on this ship to broadcast whatever
-                you want across the universe. What are you using it for?
-            </li>
-        </ul>
+                <input type="checkbox" id="builtForSpeed" onclick="BuiltForSpeed()" />
+                <label for="builtForSpeed"><b>Built For Speed</b></label>
+                <ul>
+                    <li>
+                        The ship gains +1 Speed. It also increases your max Speed by 1.
+                    </li>
+                </ul>
 
-        <input type="checkbox" id="builtForSpeed" onclick="BuiltForSpeed()" />
-        <label for="builtForSpeed"><b>Built For Speed</b></label>
-        <ul>
-            <li>
-                The ship gains +1 Speed. It also increases your max Speed by 1.
-            </li>
-        </ul>
+                <input type="checkbox" id="dataCenter" onclick="DataCenter()" />
+                <label for="dataCenter"><b>Data Center</b></label>
+                <ul>
+                    <li>
+                        This place gives you direct access to the high-speed Net and all the
+                        information stored inside it.
+                    </li>
+                    <li>
+                        While in the data center, you get +1 forward to gauge the situation
+                        on things that could logically be found on the Net. The Artificial
+                        gets +1 ongoing to any rolls made while in the data center.
+                    </li>
+                </ul>
 
-        <input type="checkbox" id="dataCenter" onclick="DataCenter()" />
-        <label for="dataCenter"><b>Data Center</b></label>
-        <ul>
-            <li>
-                This place gives you direct access to the high-speed Net and all the
-                information stored inside it.
-            </li>
-            <li>
-                While in the data center, you get +1 forward to gauge the situation
-                on things that could logically be found on the Net. The Artificial
-                gets +1 ongoing to any rolls made while in the data center.
-            </li>
-        </ul>
+                <input type="checkbox" id="fancyComputing" onclick="FancyComputing()" />
+                <label for="fancyComputing"><b>Fancy Computing</b></label>
+                <ul>
+                    <li>
+                        The ship gains +1 System. It also increases your max System by 1.
+                    </li>
+                </ul>
 
-        <input type="checkbox" id="fancyComputing" onclick="FancyComputing()" />
-        <label for="fancyComputing"><b>Fancy Computing</b></label>
-        <ul>
-            <li>
-                The ship gains +1 System. It also increases your max System by 1.
-            </li>
-        </ul>
+                <input type="checkbox" id="fancyLookin" onclick="FancyLookin()" />
+                <label for="fancyLookin"><b>Fancy-Lookin'</b></label>
+                <ul>
+                    <li>
+                        Your ship looks mighty nice on the outside, nice enough to get you
+                        into places other ships might not be able to get – problem is, does
+                        the inside match?
+                    </li>
+                    <li>
+                        Gives +1 cost to the ship.
+                    </li>
+                </ul>
 
-        <input type="checkbox" id="fancyLookin" onclick="FancyLookin()" />
-        <label for="fancyLookin"><b>Fancy-Lookin'</b></label>
-        <ul>
-            <li>
-                Your ship looks mighty nice on the outside, nice enough to get you
-                into places other ships might not be able to get – problem is, does
-                the inside match?
-            </li>
-            <li>
-                Gives +1 cost to the ship.
-            </li>
-        </ul>
+                <input type="checkbox" id="flares" onclick="Flares()" />
+                <label for="flares"><b>Flares</b></label>
+                <ul>
+                    <li>
+                        Your ship is equipped with flares for defense. You start with
+                        3 charges. Expend 1 charge to ignore the complication from an
+                        attack on the ship. Charges cost 2 credits each.
+                    </li>
+                </ul>
 
-        <input type="checkbox" id="flares" onclick="Flares()" />
-        <label for="flares"><b>Flares</b></label>
-        <ul>
-            <li>
-                Your ship is equipped with flares for defense. You start with
-                3 charges. Expend 1 charge to ignore the complication from an
-                attack on the ship. Charges cost 2 credits each.
-            </li>
-        </ul>
+                <input type="checkbox" id="garage" onclick="Garage()" />
+                <label for="garage"><b>Garage</b></label>
+                <ul>
+                    <li>
+                        You’ve got a place to store your vehicles on the ship, if you happen
+                        to have any.
+                    </li>
+                    <li>
+                        <i>Only allowed on Size 1 ships and above.</i>
+                    </li>
+                </ul>
 
-        <input type="checkbox" id="garage" onclick="Garage()" />
-        <label for="garage"><b>Garage</b></label>
-        <ul>
-            <li>
-                You’ve got a place to store your vehicles on the ship, if you happen
-                to have any.
-            </li>
-            <li>
-                <i>Only allowed on Size 1 ships and above.</i>
-            </li>
-        </ul>
+                <input type="checkbox" id="grapplerClaws" onclick="GrapplerClaws()" />
+                <label for="grapplerClaws"><b>Grappler Claws</b></label>
+                <ul>
+                    <li>
+                        You have grappler claws on the ship that allow you to grab things –
+                        even other ships – and pull them closer to you.
+                    </li>
+                </ul>
 
-        <!--
-            Grappler Claws
-            Greenery
-            Gunner Station
-            Heavier Than She Looks
-        -->
+                <input type="checkbox" id="greenery" onclick="Greenery()" />
+                <label for="greenery"><b>Greenery</b></label>
+                <ul>
+                    <li>
+                        At least half, if not all, of your ship is covered in plants, you’ve got
+                        recycling down to an art, and you’ve even got a small farm going. It
+                        might be a bit of a jungle in here, but at least the air is nice.
+                    </li>
+                    <li>
+                        Life support malfunctions don’t immediately cause -1 ongoing.
+                    </li>
+                </ul>
 
-        <input type="checkbox" id="internalSecurity" onclick="InternalSecurity()" />
-        <label for="internalSecurity"><b>Internal Security'</b></label>
-        <ul>
-            <li>
-                You’ve got cameras set up in every hall, locking mechanisms on all
-                the doors, and can even spit knockout gas through the life support.
-                Just in case the crew gets rowdy. Or there’s a home invasion.
-            </li>
-            <li>
-                Gives +1 cost to the ship. <i>Only allowed on Size 1 ships and above.</i>
-            </li>
-        </ul>
+                <input type="checkbox" id="gunnerStation" onclick="GunnerStation()" />
+                <label for="gunnerStation"><b>Gunner Station</b></label>
+                <ul>
+                    <li>
+                        Allows you to use the Attack ship move.
+                    </li>
+                    <li>
+                        Gives +1 cost to the ship.
+                    </li>
+                </ul>
 
+                <input type="checkbox" id="heavierThanSheLooks" onclick="HeavierThanSheLooks()" />
+                <label for="heavierThanSheLooks"><b>Heavier Than She Looks</b></label>
+                <ul>
+                    <li>
+                        The ship gains +1 on ram something rolls.
+                    </li>
+                </ul>
+
+                <input type="checkbox" id="internalSecurity" onclick="InternalSecurity()" />
+                <label for="internalSecurity"><b>Internal Security</b></label>
+                <ul>
+                    <li>
+                        You’ve got cameras set up in every hall, locking mechanisms on all
+                        the doors, and can even spit knockout gas through the life support.
+                        Just in case the crew gets rowdy. Or there’s a home invasion.
+                    </li>
+                    <li>
+                        Gives +1 cost to the ship. <i>Only allowed on Size 1 ships and above.</i>
+                    </li>
+                </ul>
+
+                <input type="checkbox" id="medbay" onclick="Medbay()" />
+                <label for="medbay"><b>Medbay</b></label>
+                <ul>
+                    <li>
+                        While in the medbay, people heal at twice the normal rate.
+                    </li>
+                    <li>
+                        The Medic gets +1 ongoing to any rolls made while in the medbay.
+                        <i>Only allowed on Size 1 ships and above.</i>
+                    </li>
+                </ul>
+
+                <input type="checkbox" id="offTheGrid" onclick="OffTheGrid()" />
+                <label for="offTheGrid"><b>Off The Grid</b></label>
+                <ul>
+                    <li>
+                        Your ship isn’t registered, and any attempts to register it don’t work
+                        very well. Good for a crew that wants to keep under the radar.
+                    </li>
+                </ul>
+
+                <input type="checkbox" id="parlor" onclick="Parlor()" />
+                <label for="parlor"><b>Parlor</b></label>
+                <ul>
+                    <li>
+                        While in the parlor, you get +1 forward to negotiate.
+                    </li>
+                    <li>
+                        The Consort gets +1 ongoing to any rolls made while in the parlor.
+                        <i>Only allowed on Size 1 ships and above.</i>
+                    </li>
+                </ul>
+
+                <input type="checkbox" id="passengersQuarters" onclick="PassengersQuarters()" />
+                <label for="passengersQuarters"><b>Passenger's Quarters</b></label>
+                <ul>
+                    <li>
+                        You’ve got extra rooms for hauling passengers across space. Good
+                        way to make money. How fancy they are is up to you.
+                    </li>
+                    <li>
+                        While in the passenger’s quarters, you get +1 forward to size
+                        someone up. <i>Only allowed on Size 1 ships and above.</i> Increases max
+                        amount of people by 5-10.
+                    </li>
+                </ul>
+
+                <input type="checkbox" id="researchCenter" onclick="ResearchCenter()" />
+                <label for="researchCenter"><b>Research Center</b></label>
+                <ul>
+                    <li>
+                        This room has all the equipment you need to do your own research
+                        on stuff that’s strange, uncanny, or straight-up-alien.
+                    </li>
+                    <li>
+                        While in the research center, you get +1 forward to gauge the
+                        situation when you’re getting up close and personal with the stuff
+                        at hand. <i>Only allowed on Size 1 ships and above.</i>
+                    </li>
+                </ul>
+
+                <input type="checkbox" id="shuttles" onclick="Shuttles()" />
+                <label for="shuttles"><b>Shuttles</b></label>
+                <input type="number" id="shuttleNum" value="0" min="0" max="100" onclick="ShuttleNum()" />
+                <ul>
+                    <li>
+                        Your ship has some shuttles (1-2 for a size 1, 3-4 for a size 2, up to 10
+                        for a size 3). Each shuttle has Durability 2, Size 0 (max 10 people),
+                        Speed 1, System 1, space + air, no cost, 1 customization (your choice).
+                    </li>
+                    <li>
+                        Each shuttle gives +1 cost to the overall ship. <i>
+                            Only allowed
+                            on Size 1 ships and above.
+                        </i>
+                    </li>
+                </ul>
+
+                <input type="checkbox" id="smugglersHold" onclick="SmugglersHold()" />
+                <label for="smugglersHold"><b>Smuggler's Hold</b></label>
+                <ul>
+                    <li>
+                        You’ve got a special hidey hole – or two, or three – on this ship, and
+                        they come in handy when you want to keep illicit cargo under the
+                        nose of the law.
+                    </li>
+                    <li>
+                        You get +1 ongoing on any rolls pertaining to hidden cargo when
+                        it’s been hidden in the Smuggler’s Hold.
+                    </li>
+                </ul>
+
+                <input type="checkbox" id="stealthShielding" onclick="StealthShielding()" />
+                <label for="stealthShielding"><b>Stealth Shielding</b></label>
+                <ul>
+                    <li>
+                        You’ve got electromagnetic shielding all interspersed in your hull,
+                        hiding heat signatures and computer signals. If you go dark, it’d
+                        take near crashing to find you.
+                    </li>
+                    <li>
+                        You take +3 on lay low rolls. Gives +1 cost to the ship.
+                    </li>
+                </ul>
+
+                <input type="checkbox" id="trainingRoom" onclick="TrainingRoom()" />
+                <label for="trainingRoom"><b>Training Room</b></label>
+                <ul>
+                    <li>
+                        While in the training room, you get +1 forward to skirmish.
+                    </li>
+                    <li>
+                        The Muscle gets +1 ongoing to any rolls made while in the training
+                        room. <i>Only allowed on size 1 ships and above.</i>
+                    </li>
+                </ul>
+
+                <input type="checkbox" id="workshop" onclick="Workshop()" />
+                <label for="workshop"><b>Workshop</b></label>
+                <ul>
+                    <li>
+                        While in the workshop, you get +1 forward to fix some tech.
+                    </li>
+                    <li>
+                        The Technician gets +1 ongoing to any rolls made while in the
+                        workshop. <i>Only allowed on size 1 ships and above.</i>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </main>
     <script src="StardustBluesShip_JavaScript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
