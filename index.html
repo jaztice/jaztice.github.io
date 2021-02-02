@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Stardust Blues Ship Builder</title>
+</head>
+<body>
+    <header align="center">
+        <h1>Stardust Blues Ship Builder</h1><br/><br/>
+    </header>
+    <main>
+        <div align="center">
+            <label for="crewNum"><b>Number of Crewmembers</b></label>
+            <input type="number" id="crewNum" value="0" min="0" max="100" onclick="Crewmembers()" />
+        </div>
+        <table style="width:500px" align="center">
+            <caption><h3>Stats and Attributes</h3></caption>
+            <thead>
+                <tr>
+                    <th>Size</th>
+                    <th>Speed</th>
+                    <th>System</th>
+                    <th>Cost</th>
+                    <th>Durability</th>
+                    <th>Environments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="size" align="center"></td>
+                    <td id="speed" align="center"></td>
+                    <td id="system" align="center"></td>
+                    <td id="cost" align="center"></td>
+                    <td id="durability" align="center"></td>
+                    <td id="environments" align="center"></td>
+                </tr>
+                <tr>
+                    <th colspan="3">Ship Points</th>
+                    <th colspan="3">Customizations</th>
+                </tr>
+                <tr>
+                    <td id="points" align="center" colspan="3"></td>
+                    <td id="customizations" align="center" colspan="3"></td>
+                </tr>
+                <tr>
+                    <th colspan="6">Customizations List</th>
+                </tr>
+                <tr>
+                    <td id="customsList" align="center" colspan="6"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br />
+
+        <div align="center">
+            <label for="sizebtn"><b>Size</b></label>
+            <input id="sizebtn" type="number" value="0" step="1" min="0" max="3" onclick="SizeBTN()" />
+            <label for="speedbtn"><b>Speed</b></label>
+            <input id="speedbtn" type="number" value="0" step="1" min="0" max="3" onclick="SpeedBTN()" />
+            <label for="systembtn"><b>System</b></label>
+            <input id="systembtn" type="number" value="0" step="1" min="0" max="3" onclick="SystemBTN()" />
+        </div>
+        <br />
+        <div align="center">
+            <label for="costbtn"><b>Cost Reduction</b></label>
+            <input id="costbtn" type="number" value="0" step="1" min="0" max="100" onclick="CostBTN()" />
+            <label for="durbtn"><b>Durability</b></label>
+            <input id="durbtn" type="number" value="3" step="1" min="3" max="100" onclick="DurBTN()" />
+        </div>
+        <br />
+        <div align="center">
+            <b>Environment Add-Ons</b> <br />
+            <label for="air"><i>Air</i></label>
+            <input id="air" type="checkbox" onclick="AirBTN()" />
+            <label for="land"><i>Land</i></label>
+            <input id="land" type="checkbox" onclick="LandBTN()" />
+            <label for="sea"><i>Sea</i></label>
+            <input id="sea" type="checkbox" onclick="SeaBTN()" />
+        </div>
+
+        <!--
+        <div id="size1ships">
+            <p style="color:red; display:none;" align="center">
+                <b>Only allowed on size 1 ships and above.</b>
+            </p>
+        </div>
+
+        <br /><br />
+    -->
+        <h3><u>Customizations</u></h3>
+
+        <input type="checkbox" id="automatedControls" onclick="AutomatedControls()" />
+        <label for="automatedControls"><b>Automated Controls</b></label>
+        <ul>
+            <li>
+                Your ship flies itself – literally. No need for a pilot on this one.
+                Problem is, that might get you into trouble more often than it gets
+                you out of it.
+            </li>
+            <li>
+                Gives +1 cost to the ship. Captain rolls when making pilot moves.
+            </li>
+        </ul>
+
+        <input type="checkbox" id="battleScarred" onclick="BattleScarred()" />
+        <label for="battleScarred"><b>Battle-Scarred</b></label>
+        <ul>
+            <li>
+                The ship gains +1 durability.
+            </li>
+        </ul>
+
+        <input type="checkbox" id="brig" onclick="Brig()" />
+        <label for="brig"><b>Brig</b></label>
+        <ul>
+            <li>
+                You’ve got yourself a nice little jail set up somewhere on your ship.
+                It isn’t all that big, but it can fit a few troublemakers inside.
+            </li>
+            <li>
+                The Veteran gets +1 ongoing to any rolls made while in the brig.
+                <i>Only allowed on Size 1 ships and above.</i>
+            </li>
+        </ul>
+
+        <input type="checkbox" id="broadcastingEquipment" onclick="BroadcastingEquipment()" />
+        <label for="broadcastingEquipment"><b>Broadcasting Equipment</b></label>
+        <ul>
+            <li>
+                You have everything you need on this ship to broadcast whatever
+                you want across the universe. What are you using it for?
+            </li>
+        </ul>
+
+        <input type="checkbox" id="builtForSpeed" onclick="BuiltForSpeed()" />
+        <label for="builtForSpeed"><b>Built For Speed</b></label>
+        <ul>
+            <li>
+                The ship gains +1 Speed. It also increases your max Speed by 1.
+            </li>
+        </ul>
+
+        <input type="checkbox" id="dataCenter" onclick="DataCenter()" />
+        <label for="dataCenter"><b>Data Center</b></label>
+        <ul>
+            <li>
+                This place gives you direct access to the high-speed Net and all the
+                information stored inside it.
+            </li>
+            <li>
+                While in the data center, you get +1 forward to gauge the situation
+                on things that could logically be found on the Net. The Artificial
+                gets +1 ongoing to any rolls made while in the data center.
+            </li>
+        </ul>
+
+        <input type="checkbox" id="fancyComputing" onclick="FancyComputing()" />
+        <label for="fancyComputing"><b>Fancy Computing</b></label>
+        <ul>
+            <li>
+                The ship gains +1 System. It also increases your max System by 1.
+            </li>
+        </ul>
+
+        <input type="checkbox" id="fancyLookin" onclick="FancyLookin()" />
+        <label for="fancyLookin"><b>Fancy-Lookin'</b></label>
+        <ul>
+            <li>
+                Your ship looks mighty nice on the outside, nice enough to get you
+                into places other ships might not be able to get – problem is, does
+                the inside match?
+            </li>
+            <li>
+                Gives +1 cost to the ship.
+            </li>
+        </ul>
+
+        <input type="checkbox" id="flares" onclick="Flares()" />
+        <label for="flares"><b>Flares</b></label>
+        <ul>
+            <li>
+                Your ship is equipped with flares for defense. You start with
+                3 charges. Expend 1 charge to ignore the complication from an
+                attack on the ship. Charges cost 2 credits each.
+            </li>
+        </ul>
+
+        <input type="checkbox" id="garage" onclick="Garage()" />
+        <label for="garage"><b>Garage</b></label>
+        <ul>
+            <li>
+                You’ve got a place to store your vehicles on the ship, if you happen
+                to have any.
+            </li>
+            <li>
+                <i>Only allowed on Size 1 ships and above.</i>
+            </li>
+        </ul>
+
+        <!--
+            Grappler Claws
+            Greenery
+            Gunner Station
+            Heavier Than She Looks
+        -->
+
+        <input type="checkbox" id="internalSecurity" onclick="InternalSecurity()" />
+        <label for="internalSecurity"><b>Internal Security'</b></label>
+        <ul>
+            <li>
+                You’ve got cameras set up in every hall, locking mechanisms on all
+                the doors, and can even spit knockout gas through the life support.
+                Just in case the crew gets rowdy. Or there’s a home invasion.
+            </li>
+            <li>
+                Gives +1 cost to the ship. <i>Only allowed on Size 1 ships and above.</i>
+            </li>
+        </ul>
+
+    </main>
+    <script src="StardustBluesShip_JavaScript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+</body>
+</html>
