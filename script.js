@@ -1,4 +1,4 @@
-//Let's go baby
+﻿//Let's go baby
 
 let sizeNum = 0;
 let speedNum = 0;
@@ -474,6 +474,12 @@ function TrainingRoom() {
         HandleCustoms(checkBox.checked, false);
         AddToCustomsList(checkBox, ' Training Room');
     }
+}
+
+function Versatile() {
+    const checkBox = document.getElementById('versatile');
+    HandleCustoms(checkBox.checked, false);
+    AddToCustomsList(checkBox, ' Versatile');
 }
 
 function Workshop() {

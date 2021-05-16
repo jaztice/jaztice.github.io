@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -19,15 +19,7 @@
             <caption><h2>Stats and Attributes</h2></caption>
             <tbody>
                 <tr>
-                    <th colspan="6"><input type="text" value="Type Name Here!" 
-                        style="
-                            font-family: Courier New, Courier, monospace;
-                            font-weight: bold;
-                            font-size: 20px;
-                            width: 400px;
-                            text-align: center;
-                            border-width: 0;
-                        "/></th>
+                    <th colspan="6"><input type="text" value="Type Name Here!" class="namebox"/></th>
                 </tr>
                 <tr>
                     <th>Size</th>
@@ -102,18 +94,20 @@
         <div class="container">
             <h2><u>Customizations</u></h2>
             <div class="customlist">
-                <input type="checkbox" id="automatedControls" onclick="AutomatedControls()" />
-                <label for="automatedControls">Automated Controls</label>
-                <ul>
-                    <li>
-                        Your ship flies itself – literally. No need for a pilot on this one.
-                        Problem is, that might get you into trouble more often than it gets
-                        you out of it.
-                    </li>
-                    <li>
-                        Gives +1 cost to the ship. Captain rolls when making pilot moves.
-                    </li>
-                </ul>
+                <!--
+        <input type="checkbox" id="automatedControls" onclick="AutomatedControls()" />
+        <label for="automatedControls">Automated Controls</label>
+        <ul>
+            <li>
+                Your ship flies itself – literally. No need for a pilot on this one.
+                Problem is, that might get you into trouble more often than it gets
+                you out of it.
+            </li>
+            <li>
+                Gives +1 cost to the ship. Captain rolls when making pilot moves.
+            </li>
+        </ul>
+    -->
 
                 <input type="checkbox" id="battleScarred" onclick="BattleScarred()" />
                 <label for="battleScarred"><b>Battle-Scarred</b></label>
@@ -149,7 +143,7 @@
                 <label for="builtForSpeed"><b>Built For Speed</b></label>
                 <ul>
                     <li>
-                        The ship gains +1 Speed. It also increases your max Speed by 1.
+                        The ship gains +1 Speed, to a max of 4.
                     </li>
                 </ul>
 
@@ -161,7 +155,7 @@
                         information stored inside it.
                     </li>
                     <li>
-                        While in the data center, you get +1 forward to gauge the situation
+                        While in the data center, you get +1 forward to <b>gauge the situation</b>
                         on things that could logically be found on the Net. The Artificial
                         gets +1 ongoing to any rolls made while in the data center.
                     </li>
@@ -171,7 +165,7 @@
                 <label for="fancyComputing"><b>Fancy Computing</b></label>
                 <ul>
                     <li>
-                        The ship gains +1 System. It also increases your max System by 1.
+                        The ship gains +1 System, to a max of 4.
                     </li>
                 </ul>
 
@@ -179,9 +173,9 @@
                 <label for="fancyLookin"><b>Fancy-Lookin'</b></label>
                 <ul>
                     <li>
-                        Your ship looks mighty nice on the outside, nice enough to get you
-                        into places other ships might not be able to get – problem is, does
-                        the inside match?
+                        Your ship looks mighty nice on the outside, nice enough to get you into
+                        places other ships might not be able to get. Take +1 to <b>negotiate rolls</b>
+                        where you use the ship to impress.
                     </li>
                     <li>
                         Gives +1 cost to the ship.
@@ -193,8 +187,8 @@
                 <ul>
                     <li>
                         Your ship is equipped with flares for defense. You start with
-                        3 charges. Expend 1 charge to ignore the complication from an
-                        attack on the ship. Charges cost 2 credits each.
+                        3 flares. Expend 1 flare to ignore the complication from an
+                        attack on the ship. Flares cost 2 credits each.
                     </li>
                 </ul>
 
@@ -219,24 +213,26 @@
                     </li>
                 </ul>
 
-                <input type="checkbox" id="greenery" onclick="Greenery()" />
-                <label for="greenery"><b>Greenery</b></label>
-                <ul>
-                    <li>
-                        At least half, if not all, of your ship is covered in plants, you’ve got
-                        recycling down to an art, and you’ve even got a small farm going. It
-                        might be a bit of a jungle in here, but at least the air is nice.
-                    </li>
-                    <li>
-                        Life support malfunctions don’t immediately cause -1 ongoing.
-                    </li>
-                </ul>
+                <!--
+    <input type="checkbox" id="greenery" onclick="Greenery()" />
+    <label for="greenery"><b>Greenery</b></label>
+    <ul>
+        <li>
+            At least half, if not all, of your ship is covered in plants, you’ve got
+            recycling down to an art, and you’ve even got a small farm going. It
+            might be a bit of a jungle in here, but at least the air is nice.
+        </li>
+        <li>
+            Life support malfunctions don’t immediately cause -1 ongoing.
+        </li>
+    </ul>
+    -->
 
                 <input type="checkbox" id="gunnerStation" onclick="GunnerStation()" />
                 <label for="gunnerStation"><b>Gunner Station</b></label>
                 <ul>
                     <li>
-                        Allows you to use the Attack ship move.
+                        Allows you to use the <b>Attack</b> ship move.
                     </li>
                     <li>
                         Gives +1 cost to the ship.
@@ -247,7 +243,7 @@
                 <label for="heavierThanSheLooks"><b>Heavier Than She Looks</b></label>
                 <ul>
                     <li>
-                        The ship gains +1 on ram something rolls.
+                        The ship gains +1 on ram something rolls, to a max of 4.
                     </li>
                 </ul>
 
@@ -281,7 +277,8 @@
                 <ul>
                     <li>
                         Your ship isn’t registered, and any attempts to register it don’t work
-                        very well. Good for a crew that wants to keep under the radar.
+                        very well. The hull identification is fudged, and the plates can be switched.
+                        Good for a crew that wants to keep under the radar.
                     </li>
                 </ul>
 
@@ -289,7 +286,7 @@
                 <label for="parlor"><b>Parlor</b></label>
                 <ul>
                     <li>
-                        While in the parlor, you get +1 forward to negotiate.
+                        While in the parlor, you get +1 forward to <b>negotiate</b>.
                     </li>
                     <li>
                         The Consort gets +1 ongoing to any rolls made while in the parlor.
@@ -305,8 +302,10 @@
                         way to make money. How fancy they are is up to you.
                     </li>
                     <li>
-                        While in the passenger’s quarters, you get +1 forward to size
-                        someone up. <i>Only allowed on Size 1 ships and above.</i> Increases max
+                        While in the passenger’s quarters, you get +1 forward to <b>
+                            size
+                            someone up
+                        </b>. <i>Only allowed on Size 1 ships and above.</i> Increases max
                         amount of people by 5-10.
                     </li>
                 </ul>
@@ -319,8 +318,10 @@
                         on stuff that’s strange, uncanny, or straight-up-alien.
                     </li>
                     <li>
-                        While in the research center, you get +1 forward to gauge the
-                        situation when you’re getting up close and personal with the stuff
+                        While in the research center, you get +1 forward to <b>
+                            gauge
+                            the situation
+                        </b> when you’re getting up close and personal with the stuff
                         at hand. <i>Only allowed on Size 1 ships and above.</i>
                     </li>
                 </ul>
@@ -365,7 +366,7 @@
                         take near crashing to find you.
                     </li>
                     <li>
-                        You take +3 on lay low rolls. Gives +1 cost to the ship.
+                        You take +2 on lay low rolls, to a max of 4. Gives +1 cost to the ship.
                     </li>
                 </ul>
 
@@ -373,7 +374,7 @@
                 <label for="trainingRoom"><b>Training Room</b></label>
                 <ul>
                     <li>
-                        While in the training room, you get +1 forward to skirmish.
+                        While in the training room, you get +1 forward to <b>skirmish</b>.
                     </li>
                     <li>
                         The Muscle gets +1 ongoing to any rolls made while in the training
@@ -381,11 +382,21 @@
                     </li>
                 </ul>
 
+                <input type="checkbox" id="versatile" onclick="Versatile()" />
+                <label for="versatile"><b>Versatile</b></label>
+                <ul>
+                    <li>
+                        Choose one ship move. The ship gains +1 ongoing, max 4, for that move until
+                        the scene ends. However, the ship also gains -1 ongoing for another
+                        ship move, GM’s choice, until that same scene ends.
+                    </li>
+                </ul>
+
                 <input type="checkbox" id="workshop" onclick="Workshop()" />
                 <label for="workshop"><b>Workshop</b></label>
                 <ul>
                     <li>
-                        While in the workshop, you get +1 forward to fix some tech.
+                        While in the workshop, you get +1 forward to <b>fix some tech</b>.
                     </li>
                     <li>
                         The Technician gets +1 ongoing to any rolls made while in the
